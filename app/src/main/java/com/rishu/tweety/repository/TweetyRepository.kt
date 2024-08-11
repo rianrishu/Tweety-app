@@ -13,7 +13,7 @@ class TweetyRepository @Inject constructor(private val tweetyAPIs: TweetyAPIs) {
     val categories: StateFlow<List<String>>
         get() = _categories
 
-    private val _tweets = MutableStateFlow(TweetList(null))
+    private val _tweets = MutableStateFlow(TweetList(emptyList()))
     val tweets: StateFlow<TweetList>
         get() = _tweets
 
