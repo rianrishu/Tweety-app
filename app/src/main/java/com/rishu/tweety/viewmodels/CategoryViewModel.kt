@@ -18,10 +18,8 @@ class CategoryViewModel @Inject constructor(
         get() = repository.categories
 
     init {
-        Log.d("Categories",  "inside view model")
         viewModelScope.launch {
             repository.getCategories()
-            Log.d("Categories",  "passed to view model")
         }
     }
 

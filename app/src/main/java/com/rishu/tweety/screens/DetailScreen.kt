@@ -17,10 +17,11 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.rishu.tweety.viewmodels.DetailViewModel
 
-@Preview
+
 @Composable
-fun DetailScreen() {
+fun DetailScreen(category: String) {
     val detailViewModel: DetailViewModel = viewModel()
+    detailViewModel
     val tweetList = detailViewModel.tweetList.collectAsState()
     LazyColumn {
         items(tweetList.value) {

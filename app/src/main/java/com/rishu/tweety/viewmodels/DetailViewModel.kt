@@ -12,7 +12,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val repository: TweetyRepository
+    private val repository: TweetyRepository,
+    private val category: String
 ) : ViewModel() {
 
     val tweetList: StateFlow<List<Tweet>>
@@ -20,7 +21,7 @@ class DetailViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            repository.getTweets("motivation")
+            repository.getTweets(category)
         }
     }
 }
